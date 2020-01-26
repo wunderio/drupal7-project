@@ -27,7 +27,7 @@ fi
 
 # Synchronize & sanitize database from selected environment.
 rm -rf /app/dump.sql
-drush @"$LANDO_APP_NAME.$REMOTE" sql-dump --structure-tables-list=cache,cache_*,history,sessions,watchdog > /app/dump.sql
+drush @"$LANDO_APP_NAME"."$REMOTE" sql-dump --structure-tables-list=cache,cache_*,history,sessions,watchdog > /app/dump.sql
 drush "$LOCAL" sql-drop -y
 # drush sql-sync @"$LANDO_APP_NAME"."$REMOTE" "$LOCAL" -y
 drush "$LOCAL" sql-query --file=/app/dump.sql -y
