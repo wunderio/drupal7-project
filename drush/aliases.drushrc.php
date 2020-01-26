@@ -2,6 +2,7 @@
 
 /**
  * Define Drush site aliases.
+ * Use `prod` as production site alias, see `.lando/syncdb.sh`.
  */
 $name = getenv('LANDO_APP_NAME');
 
