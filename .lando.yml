@@ -5,6 +5,14 @@ config:
   via: nginx
 
 services:
+  adminer:
+    type: compose
+    services:
+      image: dehy/adminer
+      command: /bin/s6-svscan /etc/services.d
+    run_as_root:
+      - /app/.lando/adminer.sh
+    portforward: true
   appserver:
     type: 'php:7.2'
     webroot: web
@@ -22,6 +30,10 @@ tooling:
     description: Apply required (database) updates.
     cmd:
       - appserver: /app/.lando/update.sh
+
+proxy:
+  adminer:
+    - adminer-project.lndo.site
 
 events:
   pre-start:

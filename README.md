@@ -15,6 +15,10 @@ This template is based on the [drupal-composer/drupal-project](https://github.co
 
 - <https://project.lndo.site>, alias `@project.local`.
 
+### Services
+
+- <https://adminer-project.lndo.site> - Adminer for database management, log in **without** entering the credentials.
+
 ### Tools
 
 Full commands/tools overview is available at `lando`. Custom tools:
