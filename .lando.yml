@@ -1,0 +1,27 @@
+name: project
+recipe: drupal7
+
+config:
+  via: nginx
+
+services:
+  appserver:
+    type: 'php:7.2'
+    webroot: web
+    build:
+      - /app/.lando/build.sh
+  database:
+    type: 'mariadb:10.2'
+
+tooling:
+  build:
+    description: Build appserver.
+    cmd:
+      - appserver: /app/.lando/build.sh
+
+events:
+  pre-start:
+    - appserver: composer install
+
+# Tested with Lando version.
+version: v3.0.0-rc.23
