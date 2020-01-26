@@ -18,6 +18,7 @@ This template is based on the [drupal-composer/drupal-project](https://github.co
 ### Services
 
 - <https://adminer-project.lndo.site> - Adminer for database management, log in **without** entering the credentials.
+- <https://mail-project.lndo.site> - Mailhog for mail management.
 
 ### Tools
 

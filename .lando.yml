@@ -20,6 +20,10 @@ services:
       - /app/.lando/build.sh
   database:
     type: 'mariadb:10.2'
+  mailhog:
+    type: mailhog
+    hogfrom:
+      - appserver
 
 tooling:
   build:
@@ -34,6 +38,8 @@ tooling:
 proxy:
   adminer:
     - adminer-project.lndo.site
+  mailhog:
+    - mail-project.lndo.site
 
 events:
   pre-start:
