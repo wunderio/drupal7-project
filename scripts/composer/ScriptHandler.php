@@ -60,8 +60,18 @@ class ScriptHandler {
     $files = [
       '.travis.yml',
       'LICENSE',
-      'README.md',
       'phpunit.xml.dist',
+      'web/.gitignore',
+      'web/CHANGELOG.txt',
+      'web/INSTALL.mysql.txt',
+      'web/INSTALL.pgsql.txt',
+      'web/INSTALL.sqlite.txt',
+      'web/install.php',
+      'web/INSTALL.txt',
+      'web/MAINTAINERS.txt',
+      'web/README.txt',
+      'web/update.php',
+      'web/UPGRADE.txt',
     ];
 
     foreach ($files as $file) {
