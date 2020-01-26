@@ -41,6 +41,14 @@ tooling:
     service: node
   npm:
     service: node
+  phpcbf:
+    description: Run phpcbf commands.
+    cmd:
+      - appserver: /app/vendor/bin/phpcbf
+  phpcs:
+    description: Run phpcs commands.
+    cmd:
+      - appserver: /app/vendor/bin/phpcs
   update:
     description: Apply required (database) updates.
     cmd:
