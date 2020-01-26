@@ -8,8 +8,9 @@ This template is based on the [drupal-composer/drupal-project](https://github.co
 
 1. Install the [latest Lando](https://github.com/lando/lando/releases) and read the [documentation](https://docs.lando.dev/).
 2. Update your project name and other Lando [Drupal 7 recipe](https://docs.lando.dev/config/drupal7.html)'s parameters at `.lando.yml`.
-3. Run `lando start`.
-4. Import data with `lando db-import <dumpfile>`.
+3. Define Drush site aliases at `drush/aliases.drushrc.php` & default remote environment at `.lando/syncdb.sh`.
+4. Run `lando start`.
+5. Import data with `lando syncdb <remote>` or `lando db-import <dumpfile>`.
 
 ### Local sites
 
@@ -30,6 +31,7 @@ Full commands/tools overview is available at `lando`. Custom tools:
 - `lando phpcs`, `lando phpcbf`- use PHP_CodeSniffer:
   - Use Drupal & DrupalPractice standard for selected extensions: `lando phpcs --standard=Drupal,DrupalPractice web/sites/all/modules/contrib --extensions=php,inc,module,install`
   - Check `web/sites/all/modules/custom` folder for PHP 7.2 compatibility using [PHPCompatibility](https://github.com/PHPCompatibility/PHPCompatibility) standard: `lando phpcs --standard=PHPCompatibility --extensions=php,inc,module,install --report-full=report_72.txt --runtime-set testVersion 7.2 -ps web/sites/all/modules/custom`.
+- `lando syncdb <remote>` - synchronize local database with selected remote environment (default / `prod`).
 - `lando update` - apply required (database) updates.
 - `lando xdebug-on`, `lando xdebug-off` - enable / disable [Xdebug](https://xdebug.org/) for [nginx](https://nginx.org/en/).
 

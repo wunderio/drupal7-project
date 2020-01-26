@@ -49,6 +49,10 @@ tooling:
     description: Run phpcs commands.
     cmd:
       - appserver: /app/vendor/bin/phpcs
+  syncdb:
+    description: Synchronize local database with selected remote environment.
+    cmd:
+      - appserver: /app/.lando/syncdb.sh
   update:
     description: Apply required (database) updates.
     cmd:

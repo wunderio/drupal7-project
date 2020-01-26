@@ -9,7 +9,7 @@ drush "$LOCAL" updb -y
 
 # Enable composer_autoloader module
 # @see: https://github.com/drupal-composer/drupal-project/blob/7.x/README.md#how-to-enable-the-composer-autoloader-in-your-drupal-7-website
-drush "$LOCAL" en composer_autoloader
+drush "$LOCAL" en composer_autoloader -y
 
 # Enable development modules
 # drush "$LOCAL" en -y stage_file_proxy update devel
