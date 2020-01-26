@@ -27,5 +27,8 @@ Full commands/tools overview is available at `lando`. Custom tools:
 - `lando build` - build the local site.
 - `lando npm` - run [npm](https://www.npmjs.com/) commands.
 - `lando node` - run [Node.js](https://nodejs.org/) commands.
+- `lando phpcs`, `lando phpcbf`- use PHP_CodeSniffer:
+  - Use Drupal & DrupalPractice standard for selected extensions: `lando phpcs --standard=Drupal,DrupalPractice web/sites/all/modules/contrib --extensions=php,inc,module,install`
+  - Check `web/sites/all/modules/custom` folder for PHP 7.2 compatibility using [PHPCompatibility](https://github.com/PHPCompatibility/PHPCompatibility) standard: `lando phpcs --standard=PHPCompatibility --extensions=php,inc,module,install --report-full=report_72.txt --runtime-set testVersion 7.2 -ps web/sites/all/modules/custom`.
 - `lando update` - apply required (database) updates.
 - `lando xdebug-on`, `lando xdebug-off` - enable / disable [Xdebug](https://xdebug.org/) for [nginx](https://nginx.org/en/).
