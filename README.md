@@ -20,3 +20,4 @@ This template is based on the [drupal-composer/drupal-project](https://github.co
 Full commands/tools overview is available at `lando`. Custom tools:
 
 - `lando build` - build the local site.
+- `lando update` - apply required (database) updates.

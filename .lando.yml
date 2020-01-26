@@ -15,13 +15,19 @@ services:
 
 tooling:
   build:
-    description: Build appserver.
+    description: Build an appserver.
     cmd:
       - appserver: /app/.lando/build.sh
+  update:
+    description: Apply required (database) updates.
+    cmd:
+      - appserver: /app/.lando/update.sh
 
 events:
   pre-start:
     - appserver: composer install
+  post-db-import:
+    - appserver: /app/.lando/update.sh
 
 # Tested with Lando version.
 version: v3.0.0-rc.23
