@@ -2,27 +2,28 @@
 
 This template is based on the [drupal-composer/drupal-project](https://github.com/drupal-composer/drupal-project/tree/7.x) project template.
 
-## Local environment with Lando
+## Local environment
 
-### Setup
+### [Setup](https://docs.lando.dev/basics/installation.html)
 
-1. Install the latest [Lando](https://docs.lando.dev/basics/installation.html) and read the [documentation](https://docs.lando.dev/).
-2. Check out the repo and go to the project root: `git@github.com:wunderio/drupal7-project.git project && cd project`
-3. Start the site by running `lando start`.
-4. Import data: `lando db-import <dumpfile>`.
+1. Install the [latest Lando](https://github.com/lando/lando/releases) and read the [documentation](https://docs.lando.dev/).
+2. Update your project name and other Lando [Drupal 7 recipe](https://docs.lando.dev/config/drupal7.html)'s parameters at `.lando.yml`.
+3. Run `lando start`.
+4. Import data with `lando db-import <dumpfile>`.
 
 ### Local sites
 
 - <https://project.lndo.site>, alias `@project.local`.
 
-### Services
+### [Services](https://docs.lando.dev/config/services.html)
 
-- <https://adminer-project.lndo.site> - Adminer for database management, log in **without** entering the credentials.
-- <https://mail-project.lndo.site> - Mailhog for mail management.
+- <https://adminer-project.lndo.site> - [Adminer](https://hub.docker.com/r/dehy/adminer/) for database management, log in **without** entering the credentials.
+- <https://mail-project.lndo.site> - [MailHog](https://docs.lando.dev/config/mailhog.html) for mail management.
 
-### Tools
+### [Tools](https://docs.lando.dev/config/tooling.html)
 
 Full commands/tools overview is available at `lando`. Custom tools:
 
 - `lando build` - build the local site.
 - `lando update` - apply required (database) updates.
+- `lando xdebug-on`, `lando xdebug-off` - enable / disable [Xdebug](https://xdebug.org/) for [nginx](https://nginx.org/en/).

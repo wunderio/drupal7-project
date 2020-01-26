@@ -3,6 +3,7 @@ recipe: drupal7
 
 config:
   via: nginx
+  xdebug: false
 
 services:
   adminer:
@@ -34,6 +35,16 @@ tooling:
     description: Apply required (database) updates.
     cmd:
       - appserver: /app/.lando/update.sh
+  xdebug-on:
+    service: appserver
+    description: Enables xdebug for nginx
+    cmd: docker-php-ext-enable xdebug && pkill -o -USR2 php-fpm
+    user: root
+  xdebug-off:
+    service: appserver
+    description: Disables xdebug for nginx
+    cmd: rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && pkill -o -USR2 php-fpm
+    user: root
 
 proxy:
   adminer:
