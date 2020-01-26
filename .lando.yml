@@ -1,0 +1,75 @@
+name: project
+recipe: drupal7
+
+config:
+  via: nginx
+  xdebug: false
+
+services:
+  adminer:
+    type: compose
+    services:
+      image: dehy/adminer
+      command: /bin/s6-svscan /etc/services.d
+    run_as_root:
+      - /app/.lando/adminer.sh
+    portforward: true
+  appserver:
+    type: 'php:7.2'
+    webroot: web
+    build:
+      - /app/.lando/build.sh
+  database:
+    type: 'mariadb:10.2'
+  mailhog:
+    type: mailhog
+    hogfrom:
+      - appserver
+  node:
+    type: node
+    # globals:
+    #   gulp-cli: latest
+
+tooling:
+  build:
+    description: Build an appserver.
+    cmd:
+      - appserver: /app/.lando/build.sh
+  # gulp: 
+  #   service: node
+  node:
+    service: node
+  npm:
+    service: node
+  update:
+    description: Apply required (database) updates.
+    cmd:
+      - appserver: /app/.lando/update.sh
+  xdebug-on:
+    service: appserver
+    description: Enables xdebug for nginx
+    cmd: docker-php-ext-enable xdebug && pkill -o -USR2 php-fpm
+    user: root
+  xdebug-off:
+    service: appserver
+    description: Disables xdebug for nginx
+    cmd: rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && pkill -o -USR2 php-fpm
+    user: root
+
+proxy:
+  adminer:
+    - adminer-project.lndo.site
+  mailhog:
+    - mail-project.lndo.site
+
+events:
+  pre-start:
+    - appserver: composer install
+  post-db-import:
+    - appserver: /app/.lando/update.sh
+
+env_file:
+  - .lando/.env
+
+# Tested with Lando version.
+version: v3.0.0-rc.23
