@@ -32,3 +32,14 @@ Full commands/tools overview is available at `lando`. Custom tools:
   - Check `web/sites/all/modules/custom` folder for PHP 7.2 compatibility using [PHPCompatibility](https://github.com/PHPCompatibility/PHPCompatibility) standard: `lando phpcs --standard=PHPCompatibility --extensions=php,inc,module,install --report-full=report_72.txt --runtime-set testVersion 7.2 -ps web/sites/all/modules/custom`.
 - `lando update` - apply required (database) updates.
 - `lando xdebug-on`, `lando xdebug-off` - enable / disable [Xdebug](https://xdebug.org/) for [nginx](https://nginx.org/en/).
+
+### How to convert an old Drush make project into this project template
+
+1. Generate a raw composerfile of your old Drupal 7 project with `drush generate-makefile my.make` and `drush make-convert my.make --format=composer > raw-composer.json`.
+2. Use the `require` list of `raw-composer.json` as a starting point for the requirements of the new project `composer.json`. Generate a new makefile, even if you already have one, to avoid problems with legacy issues.
+3. Perform a requirements audit and remove / replace any legacy and unused components.
+4. Move custom modules / themes to either `web/sites/all/modules/custom` or `web/sites/all/themes/custom`, respectively.
+5. Run PHP compliance tests with the `lando phpcs` tool and update the code if necessary.
+6. Use the `registry_rebuild` module to fix project paths.
+
+See also [drupal-composer/drupal-project](https://github.com/drupal-composer/drupal-project/tree/7.x) readme for the overall advices.
