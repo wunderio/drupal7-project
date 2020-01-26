@@ -1,5 +1,7 @@
 # Drupal 7 + Composer + Lando project template
 
+This template is based on the [drupal-composer/drupal-project](https://github.com/drupal-composer/drupal-project/tree/7.x) project template.
+
 ## Local environment with Lando
 
 ### Setup
