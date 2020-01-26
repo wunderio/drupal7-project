@@ -25,12 +25,22 @@ services:
     type: mailhog
     hogfrom:
       - appserver
+  node:
+    type: node
+    # globals:
+    #   gulp-cli: latest
 
 tooling:
   build:
     description: Build an appserver.
     cmd:
       - appserver: /app/.lando/build.sh
+  # gulp: 
+  #   service: node
+  node:
+    service: node
+  npm:
+    service: node
   update:
     description: Apply required (database) updates.
     cmd:

@@ -25,5 +25,7 @@ This template is based on the [drupal-composer/drupal-project](https://github.co
 Full commands/tools overview is available at `lando`. Custom tools:
 
 - `lando build` - build the local site.
+- `lando npm` - run [npm](https://www.npmjs.com/) commands.
+- `lando node` - run [Node.js](https://nodejs.org/) commands.
 - `lando update` - apply required (database) updates.
 - `lando xdebug-on`, `lando xdebug-off` - enable / disable [Xdebug](https://xdebug.org/) for [nginx](https://nginx.org/en/).
