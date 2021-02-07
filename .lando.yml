@@ -20,6 +20,7 @@ services:
     type: 'php:7.3'
     webroot: web
     build:
+      - composer install
       - /app/.lando/build.sh
     overrides:
       environment:
@@ -76,8 +77,6 @@ proxy:
     - mail-project.lndo.site
 
 events:
-  pre-start:
-    - appserver: composer install
   post-db-import:
     - appserver: /app/.lando/update.sh
 
