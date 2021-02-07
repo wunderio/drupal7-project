@@ -33,7 +33,7 @@ Full commands/tools overview is available at `lando`. Custom tools:
   - Check `web/sites/all/modules/custom` folder for PHP 7.2 compatibility using [PHPCompatibility](https://github.com/PHPCompatibility/PHPCompatibility) standard: `lando phpcs --standard=PHPCompatibility --extensions=php,inc,module,install --report-full=report_72.txt --runtime-set testVersion 7.2 -ps web/sites/all/modules/custom`.
 - `lando syncdb <remote>` - synchronize local database with selected remote environment (default / `prod`).
 - `lando update` - apply required (database) updates.
-- `lando xdebug-on`, `lando xdebug-off` - enable / disable [Xdebug](https://xdebug.org/) for [nginx](https://nginx.org/en/).
+- `lando xdebug <mode>` - load [Xdebug](https://xdebug.org/) in the selected [mode(s)](https://xdebug.org/docs/all_settings#mode).
 
 ### How to convert an old Drush make project into this project template
 
@@ -43,5 +43,6 @@ Full commands/tools overview is available at `lando`. Custom tools:
 4. Move custom modules / themes to either `web/sites/all/modules/custom` or `web/sites/all/themes/custom`, respectively.
 5. Run PHP compliance tests with the `lando phpcs` tool and update the code if necessary.
 6. Use the `registry_rebuild` module to fix project paths.
+7. Enable `composer_autoloader` module.
 
 See also [drupal-composer/drupal-project](https://github.com/drupal-composer/drupal-project/tree/7.x) readme for the overall advices.

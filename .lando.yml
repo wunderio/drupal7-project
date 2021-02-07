@@ -3,7 +3,9 @@ recipe: drupal7
 
 config:
   via: nginx
-  xdebug: false
+  xdebug: off
+  config:
+    php: .lando/php.ini
 
 services:
   adminer:
@@ -15,12 +17,16 @@ services:
       - /app/.lando/adminer.sh
     portforward: true
   appserver:
-    type: 'php:7.2'
+    type: 'php:7.3'
     webroot: web
     build:
       - /app/.lando/build.sh
+    overrides:
+      environment:
+        XDEBUG_MODE:
+        PHP_IDE_CONFIG: "serverName=appserver"
   database:
-    type: 'mariadb:10.2'
+    type: 'mariadb:10.3'
   mailhog:
     type: mailhog
     hogfrom:
@@ -57,15 +63,10 @@ tooling:
     description: Apply required (database) updates.
     cmd:
       - appserver: /app/.lando/update.sh
-  xdebug-on:
-    service: appserver
-    description: Enables xdebug for nginx
-    cmd: docker-php-ext-enable xdebug && pkill -o -USR2 php-fpm
-    user: root
-  xdebug-off:
-    service: appserver
-    description: Disables xdebug for nginx
-    cmd: rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && pkill -o -USR2 php-fpm
+  xdebug:
+    description: Loads Xdebug in the selected mode
+    cmd:
+      - appserver: /app/.lando/xdebug.sh
     user: root
 
 proxy:
@@ -81,7 +82,7 @@ events:
     - appserver: /app/.lando/update.sh
 
 env_file:
-  - .lando/.env
+  - .lando/lando.env
 
 # Tested with Lando version.
-version: v3.0.0-rc.23
+version: v3.0.23
