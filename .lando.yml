@@ -15,12 +15,12 @@ services:
       - /app/.lando/adminer.sh
     portforward: true
   appserver:
-    type: 'php:7.2'
+    type: 'php:7.3'
     webroot: web
     build:
       - /app/.lando/build.sh
   database:
-    type: 'mariadb:10.2'
+    type: 'mariadb:10.3'
   mailhog:
     type: mailhog
     hogfrom:
@@ -81,7 +81,7 @@ events:
     - appserver: /app/.lando/update.sh
 
 env_file:
-  - .lando/.env
+  - .lando/lando.env
 
 # Tested with Lando version.
-version: v3.0.0-rc.23
+version: v3.0.23
