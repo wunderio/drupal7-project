@@ -19,6 +19,8 @@ services:
   appserver:
     type: 'php:7.3'
     webroot: web
+    build_as_root:
+      - chmod -R a+w /app/web/
     build:
       - composer install
       - /app/.lando/build.sh
