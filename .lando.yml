@@ -78,10 +78,6 @@ proxy:
   mailhog:
     - mail-project.lndo.site
 
-events:
-  post-db-import:
-    - appserver: /app/.lando/update.sh
-
 env_file:
   - .lando/lando.env
 
