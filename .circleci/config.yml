@@ -1,0 +1,28 @@
+version: 2.1
+
+orbs:
+  silta: silta/silta@0.1
+
+workflows:
+  version: 2
+  commit:
+    jobs:
+      - silta/drupal-validate:
+          name: validate
+          drupal-root: drupal
+
+      - silta/drupal-build-deploy: &build-deploy
+          name: build-deploy
+          drupal-root: drupal
+          codebase-build:
+            - run:
+                name: Copy settings
+                command: |
+                  composer install -n --prefer-dist --ignore-platform-reqs --no-dev
+                  mkdir -p web/sites/default
+                  cp conf/settings.php web/sites/default/settings.php
+                  cp conf/_ping.php web
+          context: silta_dev
+          filters:
+            branches:
+              ignore: production

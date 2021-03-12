@@ -1,0 +1,16 @@
+
+# Values in this file override the default values of our helm chart.
+#
+# See https://github.com/wunderio/charts/blob/master/drupal/values.yaml
+# for all possible options
+projectName: "zenitel-ams"
+
+# Allocate more storage for the bigger DB.
+mariadb:
+  master:
+    persistence:
+      size: 10Gi
+php:
+  drupalCoreVersion: "7"
+  nodeSelector:
+    cloud.google.com/gke-nodepool: static-ip
