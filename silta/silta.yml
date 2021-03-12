@@ -3,14 +3,7 @@
 #
 # See https://github.com/wunderio/charts/blob/master/drupal/values.yaml
 # for all possible options
-projectName: "zenitel-ams"
+projectName: "project-name"
 
-# Allocate more storage for the bigger DB.
-mariadb:
-  master:
-    persistence:
-      size: 10Gi
 php:
   drupalCoreVersion: "7"
-  nodeSelector:
-    cloud.google.com/gke-nodepool: static-ip

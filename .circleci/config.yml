@@ -19,9 +19,6 @@ workflows:
                 name: Copy settings
                 command: |
                   composer install -n --prefer-dist --ignore-platform-reqs --no-dev
-                  mkdir -p web/sites/default
-                  cp conf/settings.php web/sites/default/settings.php
-                  cp conf/_ping.php web
           context: silta_dev
           filters:
             branches:

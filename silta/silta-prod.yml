@@ -15,11 +15,11 @@ backup:
 
 php:
   # Reserve more resources for our PHP containerss.
+  drupalCoreVersion: "7"
   resources:
     requests:
       cpu: 200m
       memory: 256M
-
   # Don't show errors in production.
   errorLevel: "hide"
 
