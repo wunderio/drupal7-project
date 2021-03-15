@@ -3,7 +3,7 @@
 #
 # See https://github.com/wunderio/charts/blob/master/drupal/values.yaml
 # for all possible options
-projectName: "project-name"
+projectName: "drupal7-project"
 
 php:
   drupalCoreVersion: "7"
