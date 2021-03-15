@@ -9,11 +9,11 @@ workflows:
     jobs:
       - silta/drupal-validate:
           name: validate
-          drupal-root: web
+          drupal-root: /
 
       - silta/drupal-build-deploy: &build-deploy
           name: build-deploy
-          drupal-root: web
+          drupal-root: /
           codebase-build:
             - run:
                 name: Build the codebase
