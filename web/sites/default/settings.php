@@ -20,3 +20,10 @@ if (getenv('LANDO_INFO') && file_exists(__DIR__ . '/settings.lando.php')) {
 if (file_exists(__DIR__ . '/settings.local.php')) {
   include __DIR__ . '/settings.local.php';
 }
+
+/**
+ * Silta cluster configuration overrides.
+ */
+if (getenv("SILTA_CLUSTER") && file_exists($app_root . "/" . $site_path . "/settings.silta.php")) {
+    include $app_root . "/" . $site_path . "/settings.silta.php";
+}
