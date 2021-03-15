@@ -9,14 +9,14 @@ workflows:
     jobs:
       - silta/drupal-validate:
           name: validate
-          drupal-root: drupal
+          drupal-root: /
 
       - silta/drupal-build-deploy: &build-deploy
           name: build-deploy
-          drupal-root: drupal
+          drupal-root: /
           codebase-build:
             - run:
-                name: Copy settings
+                name: Build the codebase
                 command: |
                   composer install -n --prefer-dist --ignore-platform-reqs --no-dev
           context: silta_dev
