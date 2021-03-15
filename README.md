@@ -2,6 +2,10 @@
 
 This template is based on the [drupal-composer/drupal-project](https://github.com/drupal-composer/drupal-project/tree/7.x) project template.
 
+## Silta hosting environment
+
+See <https://github.com/wunderio/drupal-project#getting-started> for Silta hosting environment settings.
+
 ## Local environment
 
 ### [Setup](https://docs.lando.dev/basics/installation.html)
