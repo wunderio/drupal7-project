@@ -13,6 +13,10 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/7"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/wunderio/drupal-ping"
         }
     ],
     "require": {
@@ -31,7 +35,8 @@
         "drupal/drupal": "^7.78",
         "drush/drush": "^8.0",
         "symfony/filesystem": "^5.2",
-        "webflo/drupal-finder": "^1.2"
+        "webflo/drupal-finder": "^1.2",
+        "wunderio/drupal-ping": "7.x-dev"
     },
     "conflict": {
         "drupal/core": "8.*"
@@ -66,6 +71,9 @@
         ]
     },
     "extra": {
+        "dropin-paths": {
+            "web/": ["type:web-dropin"]
+        },
         "installer-paths": {
             "web/": ["type:drupal-core"],
             "web/profiles/{$name}/": ["type:drupal-profile"],
