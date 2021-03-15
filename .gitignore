@@ -33,3 +33,6 @@
 /.idea/
 *.sql
 *gz
+
+# Keep Silta files.
+!/web/.dockerignore
