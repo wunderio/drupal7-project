@@ -10,10 +10,10 @@
  */
 $databases = [];
 $databases['default']['default'] = [
-  'database' => $_ENV['DB_NAME_DRUPAL'],
-  'username' => $_ENV['DB_USER_DRUPAL'],
-  'password' => $_ENV['DB_PASS_DRUPAL'],
-  'host' => $_ENV['DB_HOST_DRUPAL'],
+  'database' => $_ENV['DB_NAME'],
+  'username' => $_ENV['DB_USER'],
+  'password' => $_ENV['DB_PASS'],
+  'host' => $_ENV['DB_HOST'],
   'port' => '3306',
   'driver' => 'mysql',
 ];
@@ -49,6 +49,6 @@ $conf['file_scan_ignore_directories'] = array(
 /**
  * Silta cluster configuration overrides.
  */
-if (getenv("SILTA_CLUSTER") && file_exists($app_root . "/" . $site_path . "/settings.silta.php")) {
-    include $app_root . "/" . $site_path . "/settings.silta.php";
+if (getenv('SILTA_CLUSTER') && file_exists(__DIR__ . '/settings.silta.php')) {
+  include __DIR__ . '/settings.silta.php';
 }
