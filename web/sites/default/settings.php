@@ -49,6 +49,6 @@ $conf['file_scan_ignore_directories'] = array(
 /**
  * Silta cluster configuration overrides.
  */
-if (getenv("SILTA_CLUSTER") && file_exists($app_root . "/" . $site_path . "/settings.silta.php")) {
-    include $app_root . "/" . $site_path . "/settings.silta.php";
+if (getenv('SILTA_CLUSTER') && file_exists(__DIR__ . '/settings.silta.php')) {
+  include __DIR__ . '/settings.silta.php';
 }
