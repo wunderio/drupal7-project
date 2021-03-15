@@ -27,10 +27,10 @@ services:
     overrides:
       environment:
         ENVIRONMENT_NAME: local
-        DB_NAME_DRUPAL: drupal7
-        DB_USER_DRUPAL: drupal7
-        DB_PASS_DRUPAL: drupal7
-        DB_HOST_DRUPAL: database
+        DB_NAME: drupal7
+        DB_USER: drupal7
+        DB_PASS: drupal7
+        DB_HOST: database
         XDEBUG_MODE:
         PHP_IDE_CONFIG: "serverName=appserver"
   database:

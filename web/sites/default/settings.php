@@ -10,10 +10,10 @@
  */
 $databases = [];
 $databases['default']['default'] = [
-  'database' => $_ENV['DB_NAME_DRUPAL'],
-  'username' => $_ENV['DB_USER_DRUPAL'],
-  'password' => $_ENV['DB_PASS_DRUPAL'],
-  'host' => $_ENV['DB_HOST_DRUPAL'],
+  'database' => $_ENV['DB_NAME'],
+  'username' => $_ENV['DB_USER'],
+  'password' => $_ENV['DB_PASS'],
+  'host' => $_ENV['DB_HOST'],
   'port' => '3306',
   'driver' => 'mysql',
 ];
