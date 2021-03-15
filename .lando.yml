@@ -26,6 +26,11 @@ services:
       - /app/.lando/build.sh
     overrides:
       environment:
+        ENVIRONMENT_NAME: local
+        DB_NAME_DRUPAL: drupal7
+        DB_USER_DRUPAL: drupal7
+        DB_PASS_DRUPAL: drupal7
+        DB_HOST_DRUPAL: database
         XDEBUG_MODE:
         PHP_IDE_CONFIG: "serverName=appserver"
   database:
@@ -82,4 +87,4 @@ env_file:
   - .lando/lando.env
 
 # Tested with Lando version.
-version: v3.0.23
+version: v3.0.26
