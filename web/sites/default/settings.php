@@ -45,10 +45,3 @@ $conf['file_scan_ignore_directories'] = array(
   'node_modules',
   'bower_components',
 );
-
-/**
- * Silta cluster configuration overrides.
- */
-if (getenv('SILTA_CLUSTER') && file_exists(__DIR__ . '/settings.silta.php')) {
-  include __DIR__ . '/settings.silta.php';
-}
