@@ -6,6 +6,10 @@ This template is based on the [drupal-composer/drupal-project](https://github.co
 
 See <https://github.com/wunderio/drupal-project#getting-started> for Silta hosting environment settings.
 
+Silta injects it's own Drupal 7 settings file automatically when `drupalCoreVersion: "7"` is
+defined in [silta.yml](https://github.com/wunderio/drupal7-project/blob/master/silta/silta.yml).
+See `wunderio/charts` [settings.silta.d7.php](https://github.com/wunderio/charts/blob/master/drupal/files/settings.silta.d7.php) file for the details.
+
 ## Local environment
 
 ### [Setup](https://docs.lando.dev/basics/installation.html)

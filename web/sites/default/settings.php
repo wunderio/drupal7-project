@@ -46,9 +46,9 @@ $conf['file_scan_ignore_directories'] = array(
   'bower_components',
 );
 
-/**
- * Silta cluster configuration overrides.
+ /**
+ * Silta injects it's own Drupal 7 settings file automatically when `drupalCoreVersion: "7"` is
+ * defined in https://github.com/wunderio/drupal7-project/blob/master/silta/silta.yml.
+ * @see https://github.com/wunderio/charts/blob/master/drupal/files/settings.silta.d7.php
+ * file for the details.
  */
-if (getenv('SILTA_CLUSTER') && file_exists(__DIR__ . '/settings.silta.php')) {
-  include __DIR__ . '/settings.silta.php';
-}
