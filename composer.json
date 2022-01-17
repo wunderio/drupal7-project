@@ -28,7 +28,6 @@
         "ext-pdo": "*",
         "ext-xml": "*",
         "composer/installers": "^2.0",
-        "composer/semver": "^3.2",
         "cweagans/composer-patches": "^1.7",
         "drupal-composer/preserve-paths": "^0.1",
         "drupal/composer_autoloader": "^1.3",
@@ -53,12 +52,6 @@
         ]
     },
     "scripts": {
-        "pre-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
-        ],
-        "pre-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
-        ],
         "post-install-cmd": [
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
             "DrupalProject\\composer\\ScriptHandler::removeInternalFiles"
