@@ -85,6 +85,7 @@
                   
             }
         },
+        "composer-patches-skip-reporting": true,
         "preserve-paths": [
             "web/sites",
             "web/.dockerignore"
