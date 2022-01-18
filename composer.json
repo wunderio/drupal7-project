@@ -20,13 +20,6 @@
     }
   ],
   "require": {
-    "php": ">=7.4",
-    "ext-curl": "*",
-    "ext-gd": "*",
-    "ext-json": "*",
-    "ext-openssl": "*",
-    "ext-pdo": "*",
-    "ext-xml": "*",
     "composer/installers": "^2.0",
     "cweagans/composer-patches": "^1.7",
     "drupal-composer/preserve-paths": "^0.1",
@@ -98,6 +91,7 @@
         "https://www.drupal.org/project/warden/issues/3259003": "https://git.drupalcode.org/project/warden/-/commit/ab120a924206da9ec6f013a699bbcbb7af7969d1.patch"
       }
     },
+    "composer-exit-on-patch-failure": true,
     "composer-patches-skip-reporting": true,
     "preserve-paths": [
       "web/sites",
