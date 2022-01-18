@@ -1,5 +1,7 @@
 # Drupal 7 + Composer + Lando project template
 
+[![CircleCI](https://circleci.com/gh/wunderio/drupal7-project/tree/master.svg?style=svg)](https://circleci.com/gh/wunderio/drupal7-project/tree/master)
+
 This template is based on the [drupal-composer/drupal-project](https://github.com/drupal-composer/drupal-project/tree/7.x) project template.
 
 ## Silta hosting environment
