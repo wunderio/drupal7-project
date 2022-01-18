@@ -86,9 +86,6 @@
     "patches": {
       "cweagans/composer-patches": {
         "Call the preserve paths hooks": "https://github.com/SebCorbin/composer-patches/commit/1cb9bacba51f8bba0c5f3f322c3bb61e4ceae974.patch"
-      },
-      "drupal/warden": {
-        "https://www.drupal.org/project/warden/issues/3259003": "https://www.drupal.org/files/issues/2022-01-18/3259003-warden-cidr.patch"
       }
     },
     "patchLevel": {
