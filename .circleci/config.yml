@@ -19,13 +19,17 @@ workflows:
       - silta/drupal-build-deploy: &build-deploy
           name: build-deploy
           drupal-root: /
+          deployment_timeout: 45m
           executor: cicd74
           codebase-build:
             - run:
                 name: Build the codebase
                 command: |
                   composer install -n --prefer-dist --ignore-platform-reqs --no-dev
+                  mkdir -p web/sites/default
           context: silta_dev
           filters:
             branches:
-              ignore: production
+              ignore:
+                - production
+                - /dependabot\/.*/
