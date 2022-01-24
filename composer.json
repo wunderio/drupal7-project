@@ -98,6 +98,7 @@
         "type:drupal-theme"
       ]
     },
+    "patches-install-hooks": true,
     "patches": {
       "cweagans/composer-patches": {
         "Call the preserve paths hooks": "https://github.com/jcnventura/composer-patches/compare/1.x...jcnventura:fix-preserve-paths.diff"
