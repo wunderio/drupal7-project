@@ -102,9 +102,6 @@
     "patches": {
       "cweagans/composer-patches": {
         "Call the preserve paths hooks": "https://github.com/jcnventura/composer-patches/compare/1.x...jcnventura:fix-preserve-paths.diff"
-      },
-      "drupal/warden": {
-        "https://www.drupal.org/project/warden/issues/3259003": "https://www.drupal.org/files/issues/2022-01-18/3259003-warden-cidr.patch"
       }
     },
     "composer-exit-on-patch-failure": true,
