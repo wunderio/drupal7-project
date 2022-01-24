@@ -25,7 +25,7 @@ workflows:
             - run:
                 name: Build the codebase
                 command: |
-                  composer self-update --2
+                  sudo composer self-update --2
                   composer install -n --prefer-dist --ignore-platform-reqs --no-dev
                   mkdir -p web/sites/default
           context: silta_dev
