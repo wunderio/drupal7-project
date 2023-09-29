@@ -7,3 +7,6 @@ projectName: "drupal7-project"
 
 php:
   drupalCoreVersion: "7"
+
+referenceData:
+  enabled: false
